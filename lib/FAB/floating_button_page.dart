@@ -1,11 +1,32 @@
-import 'package:f_4_fitness/FAB/int_beg_adv_detailpage.dart';
+// import 'package:f_4_fitness/FAB/int_beg_adv_detailpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:f_4_fitness/FAB/fab_variables.dart';
+// import 'package:f_4_fitness/FAB/fab_variables.dart';
 import 'package:f_4_fitness/Excercise/excercise_page.dart';
 
 import '../DetailPAge.dart';
+class FabVariables{
 
+  String headingName;
+  String ex1;
+  String ex2;
+  String ex3;
+  String ex4;
+  String ex5;
+  String noOfWorkout;
+
+  FabVariables({
+    this.headingName,
+    this.ex1,
+    this.ex2,
+    this.ex3,
+    this.ex4,
+    this.ex5,
+    this.noOfWorkout,
+  });
+
+
+}
 class DataPage extends StatefulWidget {
   @override
   _DataPageState createState() => _DataPageState();
@@ -16,27 +37,24 @@ class _DataPageState extends State<DataPage> {
 
   List<FabVariables> template = [
     FabVariables(
-        headingName: 'assets/Beginners.png',
+        headingName: 'assets/Abs.png',
         ex1: "Beginner",
+      noOfWorkout: 'No of workouts 5',
     ),
     FabVariables(
-        headingName: 'assets/Intermidiate.jpg',
+        headingName: 'assets/Back.png',
         ex1: 'Intermidiate',
+      noOfWorkout: 'No of workouts 5',
         ),
     FabVariables(
-        headingName: 'assets/Advance_upgraded.png',
+        headingName: 'assets/Bicep.png',
         ex1: 'Advance',
+      noOfWorkout: 'No of workouts 5',
         ),
-    FabVariables(headingName: 'assets/Advance_resize.png',
+    FabVariables(headingName: 'assets/Chest.png.png',
         ex1: 'Cardio',
+      noOfWorkout: 'No of workouts 5',
         ),
-    // FabVariables(headingName: '', ex1: '', ex2: '', ex3: '', ex4: '', ex5: ''),
-    // FabVariables(headingName: '', ex1: '', ex2: '', ex3: '', ex4: '', ex5: ''),
-    // FabVariables(headingName: '', ex1: '', ex2: '', ex3: '', ex4: '', ex5: ''),
-    // FabVariables(headingName: '', ex1: '', ex2: '', ex3: '', ex4: '', ex5: ''),
-    // FabVariables(headingName: '', ex1: '', ex2: '', ex3: '', ex4: '', ex5: ''),
-    // FabVariables(headingName: '', ex1: '', ex2: '', ex3: '', ex4: '', ex5: ''),
-    // FabVariables(headingName: '', ex1: '', ex2: '', ex3: '', ex4: '', ex5: ''),
   ];
 
   @override
@@ -54,10 +72,10 @@ class _DataPageState extends State<DataPage> {
             child: InkWell(
 
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => IntBegAdvDetailPage(newtemplate)));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => IntBegAdvDetailPage(newtemplate)));
               },
               child: Container(
                 width: MediaQuery
@@ -79,7 +97,29 @@ class _DataPageState extends State<DataPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
+
                         children: [
+                          Column(
+                            children: [
+                              Text(newtemplate.ex1, style: TextStyle(fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                  letterSpacing: 2),),
+
+                              Text(newtemplate.noOfWorkout),
+
+                            ],
+                          ),
+                          // Text(newtemplate.ex1, style: TextStyle(fontSize: 25,
+                          //     fontWeight: FontWeight.bold,
+                          //     fontStyle: FontStyle.italic,
+                          //     letterSpacing: 2),),
+
+
+
+
+
+
                           CircleAvatar(
                             child: Image(
                               image: AssetImage(newtemplate.headingName),
@@ -88,24 +128,13 @@ class _DataPageState extends State<DataPage> {
                             radius: 70,
                             backgroundColor: Colors.white,
                           ),
-                          Text(newtemplate.ex1, style: TextStyle(fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
-                              letterSpacing: 2),),
+                          // Text(newtemplate.ex1, style: TextStyle(fontSize: 25,
+                          //     fontWeight: FontWeight.bold,
+                          //     fontStyle: FontStyle.italic,
+                          //     letterSpacing: 2),),
                         ],
                       ),
 
-                      //Text(newtemplate.headingName,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                      // SizedBox(height: 10,),
-                      // Text(newtemplate.ex1,style: TextStyle(fontSize: 18),),
-                      // SizedBox(height: 5,),
-                      // Text(newtemplate.ex2,style: TextStyle(fontSize: 18),),
-                      // SizedBox(height: 5,),
-                      // Text(newtemplate.ex3,style: TextStyle(fontSize: 18),),
-                      // SizedBox(height: 5,),
-                      // Text(newtemplate.ex4,style: TextStyle(fontSize: 18),),
-                      // SizedBox(height: 5,),
-                      // Text(newtemplate.ex5,style: TextStyle(fontSize: 18),),
                     ],
                   ),
                 ),

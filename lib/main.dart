@@ -1,5 +1,5 @@
+// import 'package:f_4_fitness/FAB/fab_beginner_model.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'MyBottonNavBar.dart';
 import 'FabButton.dart';
 import 'package:f_4_fitness/CustomIcon.dart';
@@ -11,7 +11,7 @@ import 'FAB/floating_button_page.dart';
 
 
 void main() {
-  runApp(ProviderScope(child: MyApp()));
+  runApp( MyApp());
 
 }
 
