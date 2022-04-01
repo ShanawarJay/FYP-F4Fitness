@@ -1,6 +1,6 @@
-import 'package:f_4_fitness/DetailPAge.dart';
+import 'package:f_4_fitness/customWidgets/DetailPAge.dart';
 import 'package:flutter/material.dart';
-import 'package:f_4_fitness/variable declaration.dart';
+import 'package:f_4_fitness/model/variable%20declaration.dart';
 import '';
 
 class Excercisepage extends StatefulWidget {
@@ -20,7 +20,7 @@ class _ExcercisepageState extends State<Excercisepage> {
         gifUrl: 'assets/Chest.png.png',
         Subtitle: 'Chest',
         text: 'How to do it',
-        discription: 'This is Incline bench press'),
+        discription: 'This is Incline bench press',),
     Variables(
         name: 'Incline Chest Dumbell Press',
         Subtitle: 'Chest',

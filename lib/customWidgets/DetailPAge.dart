@@ -1,6 +1,5 @@
-import 'package:f_4_fitness/variable%20declaration.dart';
+import 'package:f_4_fitness/model/variable%20declaration.dart';
 import 'package:flutter/material.dart';
-import 'package:f_4_fitness/Excercise/excercise_page.dart';
 
 class DetailPage extends StatelessWidget {
 
@@ -18,8 +17,8 @@ class DetailPage extends StatelessWidget {
             //Image.network(variable.gifUrl),
             //Image.network(variable.anatomyUrl),
            // Divider(),
-            Text(variable.text),
-            Text(variable.discription)
+            Text(variable.text!),
+            Text(variable.discription!)
           ],
         ),
       ),

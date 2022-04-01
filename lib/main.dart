@@ -1,17 +1,15 @@
-// import 'package:f_4_fitness/FAB/fab_beginner_model.dart';
+// import 'package:f_4_fitness/Train_Section/fab_beginner_model.dart';
+import 'package:f_4_fitness/Views/Settings/settings_page.dart';
 import 'package:flutter/material.dart';
-import 'MyBottonNavBar.dart';
-import 'FabButton.dart';
-import 'package:f_4_fitness/CustomIcon.dart';
-import 'UserPage/user_page.dart';
-import 'History/history_page.dart';
-import 'Excercise/excercise_page.dart';
-import 'Settings/settings_page.dart';
-import 'FAB/floating_button_page.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'Views/Excercise/excercise_page.dart';
+import 'Views/History/history_page.dart';
+import 'Views/Train_Section/train.dart';
+import 'Views/UserPage/user_page.dart';
 
 
 void main() {
-  runApp( MyApp());
+  runApp( ProviderScope(child: MyApp()));
 
 }
 
@@ -24,14 +22,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'F4Fitness Prototype'),
+      home: MyHomePage(title: 'F4Fitness Prototype',),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -41,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  int currentIndex = 0;
+  int currentIndex = 4;
   setBottomBarIndex(index) {
     setState(() {
       currentIndex = index;
@@ -66,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           HistoryPage(),
           Excercisepage(),
           SettingPage(),
-          DataPage(),
+          TrainPage(),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -111,7 +109,6 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-
 
                 Column(
                   children: [

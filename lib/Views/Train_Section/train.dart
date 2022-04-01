@@ -1,60 +1,39 @@
-// import 'package:f_4_fitness/FAB/int_beg_adv_detailpage.dart';
+// import 'package:f_4_fitness/Train_Section/int_beg_adv_detailpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:f_4_fitness/FAB/fab_variables.dart';
-import 'package:f_4_fitness/Excercise/excercise_page.dart';
 
-import '../DetailPAge.dart';
-class FabVariables{
+import '../../constants/providers/LifterType.dart';
+import 'ExerciseTemplates/exerciseComponentRow.dart';
+import 'ExerciseTemplates/exerciseTemplateWidget.dart';
+// import 'package:f_4_fitness/Train_Section/fab_variables.dart';
 
-  String headingName;
-  String ex1;
-  String ex2;
-  String ex3;
-  String ex4;
-  String ex5;
-  String noOfWorkout;
-
-  FabVariables({
-    this.headingName,
-    this.ex1,
-    this.ex2,
-    this.ex3,
-    this.ex4,
-    this.ex5,
-    this.noOfWorkout,
-  });
-
-
-}
-class DataPage extends StatefulWidget {
+class TrainPage extends StatefulWidget {
   @override
-  _DataPageState createState() => _DataPageState();
+  _TrainPageState createState() => _TrainPageState();
 }
 
-class _DataPageState extends State<DataPage> {
-
-
+class _TrainPageState extends State<TrainPage> {
   List<FabVariables> template = [
     FabVariables(
-        headingName: 'assets/Abs.png',
-        ex1: "Beginner",
+      headingName: 'assets/Abs.png',
+      exerciseLevel: "Beginner",
       noOfWorkout: 'No of workouts 5',
     ),
     FabVariables(
-        headingName: 'assets/Back.png',
-        ex1: 'Intermidiate',
+      headingName: 'assets/Back.png',
+      exerciseLevel: 'Intermidiate',
       noOfWorkout: 'No of workouts 5',
-        ),
+    ),
     FabVariables(
-        headingName: 'assets/Bicep.png',
-        ex1: 'Advance',
+      headingName: 'assets/Bicep.png',
+      exerciseLevel: 'Advance',
       noOfWorkout: 'No of workouts 5',
-        ),
-    FabVariables(headingName: 'assets/Chest.png.png',
-        ex1: 'Cardio',
+    ),
+    FabVariables(
+      headingName: 'assets/Chest.png.png',
+      exerciseLevel: 'Cardio',
       noOfWorkout: 'No of workouts 5',
-        ),
+    ),
   ];
 
   @override
@@ -68,20 +47,16 @@ class _DataPageState extends State<DataPage> {
 
           return Padding(
             padding:
-            const EdgeInsets.only(top: 20, left: 15, bottom: 15, right: 15),
+                const EdgeInsets.only(top: 20, left: 15, bottom: 15, right: 15),
             child: InkWell(
-
               onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => IntBegAdvDetailPage(newtemplate)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ExerciseTemplate()));
               },
               child: Container(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width,
+                width: MediaQuery.of(context).size.width,
                 height: 150,
                 decoration: BoxDecoration(
                   border: Border.all(
@@ -97,29 +72,24 @@ class _DataPageState extends State<DataPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
-
                         children: [
                           Column(
                             children: [
-                              Text(newtemplate.ex1, style: TextStyle(fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FontStyle.italic,
-                                  letterSpacing: 2),),
-
+                              Text(
+                                newtemplate.exerciseLevel,
+                                style: TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FontStyle.italic,
+                                    letterSpacing: 2),
+                              ),
                               Text(newtemplate.noOfWorkout),
-
                             ],
                           ),
                           // Text(newtemplate.ex1, style: TextStyle(fontSize: 25,
                           //     fontWeight: FontWeight.bold,
                           //     fontStyle: FontStyle.italic,
                           //     letterSpacing: 2),),
-
-
-
-
-
-
                           CircleAvatar(
                             child: Image(
                               image: AssetImage(newtemplate.headingName),
@@ -134,7 +104,6 @@ class _DataPageState extends State<DataPage> {
                           //     letterSpacing: 2),),
                         ],
                       ),
-
                     ],
                   ),
                 ),
@@ -146,3 +115,6 @@ class _DataPageState extends State<DataPage> {
     );
   }
 }
+
+
+

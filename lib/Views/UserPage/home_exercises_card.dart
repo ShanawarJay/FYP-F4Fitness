@@ -31,9 +31,9 @@ class WorkoutCard extends StatelessWidget {
   final Function() onTap;
 
   WorkoutCard({
-     this.color,
+     required this.color,
     // required this.workout,
-     this.onTap,
+     required this.onTap,
   });
   @override
   Widget build(BuildContext context) {

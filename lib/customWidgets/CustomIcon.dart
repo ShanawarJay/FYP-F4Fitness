@@ -9,12 +9,13 @@ class CustomIcon extends StatelessWidget {
   final EdgeInsetsGeometry icon_Padding;
 
   // ignore: non_constant_identifier_names
-  CustomIcon({@required this.iconText, @required this.icon, this.icon_Padding});
+  CustomIcon({required this.iconText, required this.icon, required this.icon_Padding});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: icon_Padding ?? EdgeInsets.all(0),
+      //EdgeInsets.all(0)
+      padding: icon_Padding,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,

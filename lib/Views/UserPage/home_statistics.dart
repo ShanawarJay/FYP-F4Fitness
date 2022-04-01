@@ -111,10 +111,10 @@ class DataWorkouts extends StatelessWidget {
   final String text;
 
   DataWorkouts({
-     this.icon,
-     this.title,
-     this.count,
-     this.text,
+     required this.icon,
+     required this.title,
+     required this.count,
+     required this.text,
   });
 
   @override
